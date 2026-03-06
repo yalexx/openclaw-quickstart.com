@@ -1,1 +1,1 @@
-clawbox1
+ClawBox: OpenClaw Hardware Device | 5-Minute Setup | openclawhardware.dev

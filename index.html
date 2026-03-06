@@ -3,129 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenClaw Quick Start — Set Up Your AI Assistant in 5 Minutes</title>
-<meta name="description" content="No Docker. No terminal. No Linux expertise. ClawBox comes pre-configured — plug in, scan QR, start chatting with your AI assistant.">
-<meta name="keywords" content="openclaw setup, openclaw quickstart, openclaw installation, openclaw easy setup, clawbox setup guide, ai assistant setup">
-<meta name="robots" content="index, follow">
+<title>OpenClaw Quickstart — Setup Guides & Tutorials</title>
+<meta name="description" content="Step-by-step OpenClaw setup guides. Get your AI assistant running in 5 minutes with these practical tutorials for Telegram, configuration, and automation.">
+<meta name="keywords" content="OpenClaw setup, OpenClaw guide, OpenClaw Telegram bot, OpenClaw configuration, AI assistant setup">
 <link rel="canonical" href="https://openclaw-quickstart.com/">
-<meta property="og:title" content="OpenClaw Quick Start — Set Up Your AI Assistant in 5 Minutes">
-<meta property="og:description" content="No Docker. No terminal. No Linux expertise. ClawBox comes pre-configured — plug in, scan QR, start chatting with your AI assistant.">
+<meta property="og:title" content="OpenClaw Quickstart — Setup Guides & Tutorials">
+<meta property="og:description" content="Step-by-step guides to get OpenClaw running in minutes.">
 <meta property="og:url" content="https://openclaw-quickstart.com/">
-<meta property="og:image" content="https://openclawhardware.dev/clawbox-3.webp">
-<meta property="og:type" content="product">
+<meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OpenClaw Quick Start — Set Up Your AI Assistant in 5 Minutes">
-<meta name="twitter:description" content="No Docker. No terminal. No Linux expertise. ClawBox comes pre-configured — plug in, scan QR, start chatting with your AI assistant.">
-<meta name="twitter:image" content="https://openclawhardware.dev/clawbox-3.webp">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Product","name":"ClawBox","description":"No Docker. No terminal. No Linux expertise. ClawBox comes pre-configured — plug in, scan QR, start chatting with your AI assistant.","brand":{"@type":"Brand","name":"ClawBox"},"image":"https://openclawhardware.dev/clawbox-3.webp","url":"https://openclawhardware.dev/","offers":{"@type":"Offer","price":"549","priceCurrency":"EUR","availability":"https://schema.org/InStock"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does setup really take?","acceptedAnswer":{"@type":"Answer","text":"Under 5 minutes. Unbox, plug in power + ethernet, open browser to clawbox.local, scan QR code with Telegram. That's it."}},
-{"@type":"Question","name":"Do I need technical skills?","acceptedAnswer":{"@type":"Answer","text":"None. ClawBox is designed for non-technical users. No command line, no Docker, no configuration files."}},
-{"@type":"Question","name":"What if I need help?","acceptedAnswer":{"@type":"Answer","text":"90 days email support included, plus active community Discord. Most issues resolved within hours."}}]}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0a0f1a;color:#e0e0e0;min-height:100vh;line-height:1.7}
-.hero{padding:60px 20px 80px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.hero-text h1{font-size:clamp(2rem,4.5vw,3.2rem);color:#fff;font-weight:800;line-height:1.15;margin-bottom:16px}
-.hero-text h1 span{background:linear-gradient(135deg,#06b6d4,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-text .subtitle{font-size:1.1rem;color:#9ca3af;margin-bottom:24px;line-height:1.6}
-.hero-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
-.btn-primary{display:inline-block;padding:16px 32px;background:linear-gradient(135deg,#06b6d4,#22d3ee);color:#fff;text-decoration:none;border-radius:12px;font-size:1.1rem;font-weight:700;transition:transform .2s,box-shadow .2s}
-.btn-primary:hover{transform:scale(1.05);box-shadow:0 8px 30px #06b6d444}
-.btn-secondary{display:inline-block;padding:16px 32px;color:#22d3ee;text-decoration:none;border:1px solid #06b6d444;border-radius:12px;font-size:1rem;font-weight:600;transition:all .2s}
-.btn-secondary:hover{background:#06b6d411}
-.hero-micro{font-size:.85rem;color:#6b7280}
-.hero-micro span{color:#22c55e;font-weight:600}
-.hero-image{text-align:center}
-.hero-image img{max-width:100%;height:auto;border-radius:16px;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.4))}
-.trust-bar{background:#121a2e;border-top:1px solid #06b6d422;border-bottom:1px solid #06b6d422;padding:16px 20px;text-align:center}
-.trust-bar .items{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:.85rem;color:#9ca3af}
-.section{max-width:1000px;margin:0 auto;padding:80px 20px}
-.section-title{font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;font-weight:800;margin-bottom:12px;text-align:center}
-.section-sub{color:#9ca3af;font-size:1.05rem;margin-bottom:40px;text-align:center;max-width:640px;margin-left:auto;margin-right:auto}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.feature{background:#121a2e;border-radius:14px;padding:28px;border:1px solid #06b6d422;transition:border-color .2s}
-.feature:hover{border-color:#06b6d455}
-.feature .icon{font-size:1.8rem;margin-bottom:12px}
-.feature h3{color:#fff;font-size:1.05rem;font-weight:700;margin-bottom:8px}
-.feature p{color:#9ca3af;font-size:.9rem;line-height:1.6}
-.proof{background:#121a2e;border-radius:16px;padding:48px 32px;border:1px solid #06b6d422}
-.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:32px}
-.review{background:#0a0f1a;border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,0.05)}
-.review .stars{color:#22d3ee;margin-bottom:8px;font-size:1.1rem}
-.review p{color:#d1d5db;font-size:.95rem;font-style:italic;margin-bottom:12px;line-height:1.6}
-.review cite{color:#6b7280;font-size:.85rem;font-style:normal}
-.faqs{max-width:700px;margin:0 auto}
-.faq{background:#121a2e;border-radius:12px;padding:24px;margin-bottom:12px;border:1px solid #06b6d422}
-.faq h3{color:#fff;font-size:1rem;font-weight:700;margin-bottom:8px}
-.faq p{color:#9ca3af;font-size:.9rem;line-height:1.6}
-.cta-box{text-align:center;background:linear-gradient(135deg,#06b6d422,#22d3ee11);border:1px solid #06b6d433;border-radius:20px;padding:48px 32px;margin:40px auto;max-width:600px}
-.cta-box h2{color:#fff;font-size:1.8rem;font-weight:800;margin-bottom:12px}
-.cta-box p{color:#9ca3af;margin-bottom:24px}
-.cta-box .price{font-size:2rem;color:#fff;font-weight:800;margin-bottom:8px}
-.cta-box .price-sub{font-size:.85rem;color:#6b7280;margin-bottom:24px}
-footer{text-align:center;padding:40px 20px;color:#6b7280;font-size:.8rem;border-top:1px solid rgba(255,255,255,0.05)}
-footer a{color:#22d3ee;text-decoration:none}
-@media(max-width:768px){.hero{grid-template-columns:1fr;text-align:center}.hero-cta{justify-content:center}.hero-image{order:-1}}
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--accent:#06b6d4;--bg:#0a0f1a;--bg2:#111827;--bg3:#1f2937;--text:#f1f5f9;--muted:#94a3b8;--border:#1e293b;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+header{background:var(--bg2);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{font-size:1.3rem;font-weight:800;color:var(--accent);}
+nav a{margin-left:1.5rem;color:var(--muted);font-size:.9rem;}nav a:hover{color:var(--text);}
+.hero{background:linear-gradient(135deg,#0a0f1a 0%,#001520 100%);padding:5rem 2rem;text-align:center;border-bottom:1px solid var(--border);}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.2;margin-bottom:1rem;}
+.hero h1 span{color:var(--accent);}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:600px;margin:0 auto;}
+.badge{display:inline-block;background:rgba(6,182,212,.15);color:var(--accent);padding:.3rem .8rem;border-radius:99px;font-size:.8rem;font-weight:600;margin-bottom:1rem;border:1px solid rgba(6,182,212,.3);}
+.container{max-width:1200px;margin:0 auto;padding:3rem 2rem;}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;}
+@media(max-width:768px){.grid{grid-template-columns:1fr;}}
+h2.section-title{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;}
+.article-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;transition:border-color .2s;}
+.article-card:hover{border-color:var(--accent);}
+.article-card .tag{font-size:.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;}
+.article-card h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem;}
+.article-card p{color:var(--muted);font-size:.9rem;}
+.article-card .meta{font-size:.8rem;color:var(--muted);margin-top:.8rem;}
+.featured{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:2rem;}
+.featured .label{font-size:.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;}
+.featured h2{font-size:1.6rem;font-weight:800;margin-bottom:.5rem;}
+.featured .meta{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem;}
+.featured-body h3{font-size:1.1rem;font-weight:700;margin:1.5rem 0 .5rem;color:var(--accent);}
+.featured-body p{color:#cbd5e1;margin-bottom:1rem;font-size:.95rem;}
+.featured-body ul,ol{color:#cbd5e1;font-size:.95rem;padding-left:1.5rem;margin-bottom:1rem;}
+.featured-body li{margin-bottom:.4rem;}
+.step-block{background:var(--bg3);border-radius:8px;padding:1rem 1.5rem;margin:.8rem 0;border-left:3px solid var(--accent);}
+.step-block .step-num{font-size:.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;margin-bottom:.3rem;}
+.step-block .step-title{font-weight:600;margin-bottom:.3rem;}
+.step-block .step-desc{font-size:.88rem;color:var(--muted);}
+code{background:var(--bg3);padding:.2em .5em;border-radius:4px;font-size:.85em;font-family:monospace;color:var(--accent);}
+.sidebar-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;}
+.sidebar-card h3{font-size:1rem;font-weight:700;margin-bottom:1rem;}
+.hw-item{padding:.8rem 0;border-bottom:1px solid var(--border);}
+.hw-item:last-child{border-bottom:none;}
+.hw-item .hw-name{font-weight:600;font-size:.9rem;}
+.hw-item .hw-desc{font-size:.8rem;color:var(--muted);}
+.hw-item .hw-price{font-size:.85rem;color:var(--accent);font-weight:600;}
+.faq-section{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-top:2rem;}
+.faq-section h2{font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;}
+.faq-item{margin-bottom:1.5rem;}
+.faq-item h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--accent);}
+.faq-item p{font-size:.9rem;color:var(--muted);}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.85rem;}
 </style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Blog","name":"OpenClaw Quickstart","url":"https://openclaw-quickstart.com"},
+    {"@type":"HowTo","name":"OpenClaw Setup Guide: Zero to Running in 5 Minutes","url":"https://openclaw-quickstart.com/#featured",
+      "step":[
+        {"@type":"HowToStep","name":"Connect Hardware","text":"Connect ClawBox to power and Ethernet or WiFi"},
+        {"@type":"HowToStep","name":"Open Web Panel","text":"Navigate to clawbox.local in your browser"},
+        {"@type":"HowToStep","name":"Run Setup Wizard","text":"Follow the 3-step configuration wizard"},
+        {"@type":"HowToStep","name":"Connect Telegram","text":"Scan the QR code to connect your Telegram account"},
+        {"@type":"HowToStep","name":"Start Using","text":"Send your first message and start automating"}
+      ]
+    },
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is OpenClaw?","acceptedAnswer":{"@type":"Answer","text":"OpenClaw is an open-source AI assistant framework that runs on Linux hardware. It combines local AI model inference, browser automation, voice processing, and multi-platform messaging (Telegram, WhatsApp, Discord) into a unified system you can control with natural language."}},
+      {"@type":"Question","name":"Does OpenClaw require a subscription?","acceptedAnswer":{"@type":"Answer","text":"No. OpenClaw software is free and open-source. You can bring your own API keys for cloud AI models (Claude, GPT, Gemini) which are billed by their providers — typically €5-20/month for moderate use. Many users run fully local with no external costs at all."}}
+    ]}
+  ]
+}
+</script>
 </head>
 <body>
+<header>
+  <div class="logo">⚙️ OpenClaw Quickstart</div>
+  <nav><a href="#guide">Setup Guide</a><a href="#articles">Tutorials</a><a href="#faq">FAQ</a></nav>
+</header>
 <section class="hero">
-<div class="hero-text">
-<h1><span>5-Minute</span> AI Setup</h1>
-<p class="subtitle">No Docker. No terminal. No Linux expertise. ClawBox comes pre-configured — plug in, scan QR, start chatting with your AI assistant.</p>
-<div class="hero-cta">
-<a href="https://openclawhardware.dev" class="btn-primary">Buy ClawBox — €549</a>
-<a href="https://openclawhardware.dev/faq" class="btn-secondary">Learn More</a>
-</div>
-<p class="hero-micro"><span>✓ 30-day money-back guarantee</span> · Free shipping available · No subscriptions</p>
-</div>
-<div class="hero-image">
-<img src="https://openclawhardware.dev/clawbox-3.webp" alt="ClawBox AI Hardware Device" width="500" height="400" loading="eager">
-</div>
+  <div class="badge">5-Minute Setup</div>
+  <h1>Get <span>OpenClaw</span><br>Running Fast</h1>
+  <p>Clear, step-by-step guides for setting up OpenClaw — from first boot to fully automated AI assistant. No Linux expertise required.</p>
 </section>
-<div class="trust-bar"><div class="items"><span>⚡ 67 TOPS AI</span><span>💾 512GB NVMe</span><span>🔌 20W Power</span><span>🛡️ Carbon Fiber</span><span>💰 €549 One-Time</span></div></div>
-<section class="section">
-<h2 class="section-title">Why ClawBox?</h2>
-<p class="section-sub">Everything you need for private, always-on AI — in one beautiful box.</p>
-<div class="features"><div class="feature"><div class="icon">📦</div><h3>Unbox & Plug In</h3><p>Power supply + ethernet cable. That's all you connect. WiFi also supported.</p></div>
-<div class="feature"><div class="icon">🌐</div><h3>Open clawbox.local</h3><p>Browser-based setup wizard guides you through everything. No terminal needed.</p></div>
-<div class="feature"><div class="icon">📱</div><h3>Scan QR Code</h3><p>Connect Telegram in one scan. WhatsApp and Discord also supported.</p></div>
-<div class="feature"><div class="icon">🗣️</div><h3>Start Chatting</h3><p>Your AI assistant is live. Ask questions, give commands, automate tasks immediately.</p></div>
-<div class="feature"><div class="icon">🔄</div><h3>Auto Updates</h3><p>Free software updates via web panel. One click to update, never forced.</p></div>
-<div class="feature"><div class="icon">💡</div><h3>Guided Tutorials</h3><p>Built-in help and documentation. Community Discord for advanced customization.</p></div></div>
-</section>
-<section class="section">
-<div class="proof">
-<h2 class="section-title" style="margin-bottom:32px">What Customers Say</h2>
-<div class="reviews"><div class="review"><div class="stars">★★★★★</div><p>"Best tech purchase I've made in years. The AI runs 24/7 and barely uses any power."</p><cite>— Marco P., Italy</cite></div>
-<div class="review"><div class="stars">★★★★★</div><p>"Setup was genuinely 5 minutes. Now it manages my emails and smart home. Incredible."</p><cite>— Sarah K., Germany</cite></div>
-<div class="review"><div class="stars">★★★★★</div><p>"Finally, private AI that actually works. No more sending my data to the cloud."</p><cite>— James L., UK</cite></div></div>
+<div class="container">
+  <div class="grid">
+    <main>
+      <div class="featured" id="guide">
+        <div class="label">📌 Start Here</div>
+        <h2>OpenClaw Setup Guide: Zero to Running in 5 Minutes</h2>
+        <div class="meta">February 10, 2026 · 5 min read · Setup Guides</div>
+        <div class="featured-body">
+          <p>This guide covers the fastest path to a working OpenClaw setup on ClawBox hardware. The whole process takes 5 minutes on a standard home network. If you're setting up on custom hardware, there's a longer path — but most people use ClawBox precisely because it skips that part.</p>
+
+          <h3>What You'll Need</h3>
+          <ul>
+            <li>ClawBox (comes with OpenClaw pre-installed) or a compatible Linux device with OpenClaw installed</li>
+            <li>A phone with Telegram installed (for the bot interface)</li>
+            <li>Home WiFi credentials or an Ethernet cable</li>
+            <li>Optionally: API keys for Claude or OpenAI (for cloud AI capabilities)</li>
+          </ul>
+
+          <h3>Step-by-Step Setup</h3>
+
+          <div class="step-block">
+            <div class="step-num">Step 1</div>
+            <div class="step-title">Connect & Power On</div>
+            <div class="step-desc">Connect the power cable and optionally an Ethernet cable. The device boots in about 45 seconds. The status LED turns solid green when ready.</div>
+          </div>
+          <div class="step-block">
+            <div class="step-num">Step 2</div>
+            <div class="step-title">Open the Web Panel</div>
+            <div class="step-desc">On any device on your network, open a browser and go to <code>clawbox.local</code>. If mDNS isn't working on your network, check your router's DHCP list for the device IP and use that instead.</div>
+          </div>
+          <div class="step-block">
+            <div class="step-num">Step 3</div>
+            <div class="step-title">Run the Configuration Wizard</div>
+            <div class="step-desc">The wizard has 3 screens: (1) network setup, (2) AI model selection (local vs cloud), (3) integrations. For first-time users, accepting defaults gets you running fastest — you can tweak everything later.</div>
+          </div>
+          <div class="step-block">
+            <div class="step-num">Step 4</div>
+            <div class="step-title">Connect Telegram</div>
+            <div class="step-desc">The wizard shows a QR code. Open Telegram on your phone, tap the QR scanner icon, and scan it. This links your Telegram account to your personal OpenClaw bot — messages you send to the bot go directly to your device.</div>
+          </div>
+          <div class="step-block">
+            <div class="step-num">Step 5</div>
+            <div class="step-title">Send Your First Message</div>
+            <div class="step-desc">Open the bot in Telegram and send "hello". OpenClaw responds with a welcome message and a list of available commands. You're done.</div>
+          </div>
+
+          <h3>Adding Cloud AI (Optional)</h3>
+          <p>By default, OpenClaw uses the local Llama 3.1 8B model. For more powerful AI responses, you can add cloud API keys. In the web panel, go to Settings → AI Models and enter your Claude or OpenAI API key. Once added, you can switch between local and cloud models from any conversation, or set rules like "use local for short tasks, cloud for complex ones."</p>
+
+          <h3>Setting Up Email Monitoring</h3>
+          <p>One of the most popular first automations: go to Settings → Integrations → Email. Enter your Gmail address and follow the OAuth flow. Once connected, you'll receive a morning briefing in Telegram with flagged emails and can reply to them with natural language commands like "reply to the message from Sarah saying I'll send the report by Friday."</p>
+
+          <h3>Browser Automation</h3>
+          <p>OpenClaw includes a built-in browser automation engine based on Playwright. Enable it in Settings → Browser. Once enabled, you can ask OpenClaw to visit websites, fill forms, and extract information. Example: "Check the price of [product URL] and tell me if it drops below €50."</p>
+
+          <h3>Troubleshooting Common Issues</h3>
+          <ul>
+            <li><strong>Can't reach clawbox.local:</strong> Try the IP address from your router. Or connect via Ethernet first.</li>
+            <li><strong>Telegram bot not responding:</strong> Check Settings → Telegram and verify the bot token is set correctly.</li>
+            <li><strong>Local AI is slow:</strong> Check if another process is using the GPU. Restart OpenClaw from the web panel.</li>
+            <li><strong>Model not found errors:</strong> The first model download happens post-setup. Wait for it to complete (check Settings → Models → Download Status).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="articles">
+        <h2 class="section-title">More Tutorials</h2>
+        <div class="article-card">
+          <div class="tag">Configuration</div>
+          <h3>Best Practices for OpenClaw Configuration in 2026</h3>
+          <p>A collection of proven configuration patterns for common use cases: home assistant, email manager, research assistant, smart home controller, and coding helper. Includes YAML config snippets and recommended model choices for each profile.</p>
+          <div class="meta">February 8, 2026 · 8 min read</div>
+        </div>
+        <div class="article-card">
+          <div class="tag">Telegram</div>
+          <h3>OpenClaw Telegram Bot Setup Tutorial</h3>
+          <p>Deep dive into the Telegram integration: creating a bot token, setting up multi-user access, customizing response formatting, and building Telegram-triggered automations. Includes example bot commands for common workflows.</p>
+          <div class="meta">January 30, 2026 · 7 min read</div>
+        </div>
+      </div>
+
+      <div class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>What is OpenClaw?</h3>
+          <p>OpenClaw is an open-source AI assistant framework that runs on Linux hardware. It combines local AI, browser automation, voice processing, and multi-platform messaging into a unified system you control with natural language.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does OpenClaw require a subscription?</h3>
+          <p>No. OpenClaw is free and open-source. Cloud AI API keys (Claude, GPT) are optional, billed by their providers at €5-20/month for moderate use. Many users run fully local with zero external costs.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I install OpenClaw on my own hardware?</h3>
+          <p>Yes — OpenClaw runs on Ubuntu 20.04+. Installation takes 15-30 minutes on a standard Linux machine. Pre-configured ClawBox hardware skips that setup entirely.</p>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <div class="sidebar-card">
+        <h3>🖥️ Recommended Hardware</h3>
+        <div class="hw-item">
+          <div class="hw-name">ClawBox ⭐ Easiest Setup</div>
+          <div class="hw-desc">Comes with OpenClaw pre-installed and pre-configured. Genuinely 5-minute setup. Includes 90 days email support.</div>
+          <div class="hw-price">€549 · openclawhardware.dev</div>
+        </div>
+        <div class="hw-item">
+          <div class="hw-name">DIY: Ubuntu PC/Server</div>
+          <div class="hw-desc">Any Ubuntu machine works. Install OpenClaw via pip or the install script. Requires some Linux knowledge.</div>
+          <div class="hw-price">What you already have</div>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>🔗 Official Resources</h3>
+        <p style="font-size:.85rem;color:var(--muted);line-height:2.5;">
+          <a href="https://openclawhardware.dev/setup-guide">Setup Guide (Official)</a><br>
+          <a href="https://openclawhardware.dev/faq">FAQ</a><br>
+          <a href="https://discord.gg/FbKmnxYnpq">Community Discord</a><br>
+          <a href="https://clawhub.com">ClawHub (Skills)</a>
+        </p>
+      </div>
+    </aside>
+  </div>
 </div>
-</section>
-<section class="section">
-<h2 class="section-title">Frequently Asked Questions</h2>
-<p class="section-sub">Got questions? We've got answers.</p>
-<div class="faqs"><div class="faq"><h3>How long does setup really take?</h3><p>Under 5 minutes. Unbox, plug in power + ethernet, open browser to clawbox.local, scan QR code with Telegram. That's it.</p></div>
-<div class="faq"><h3>Do I need technical skills?</h3><p>None. ClawBox is designed for non-technical users. No command line, no Docker, no configuration files.</p></div>
-<div class="faq"><h3>What if I need help?</h3><p>90 days email support included, plus active community Discord. Most issues resolved within hours.</p></div></div>
-</section>
-<section class="section">
-<div class="cta-box">
-<h2>Ready to Own Your AI?</h2>
-<div class="price">€549</div>
-<p class="price-sub">One-time purchase · No subscriptions · 30-day money-back guarantee</p>
-<a href="https://openclawhardware.dev" class="btn-primary">Order ClawBox Now</a>
-<p style="margin-top:16px;font-size:.85rem;color:#6b7280">Ships from EU via DHL Express · Worldwide delivery</p>
-</div>
-</section>
-<footer>
-<p>ClawBox by <a href="https://openclawhardware.dev">OpenClaw Hardware</a> · NVIDIA Jetson Orin Nano · Made with ❤️ in Bulgaria</p>
-<p style="margin-top:8px"><a href="https://openclawhardware.dev/faq">FAQ</a> · <a href="https://openclawhardware.dev/shipping">Shipping</a> · <a href="https://discord.gg/FbKmnxYnpq">Discord</a> · <a href="mailto:yanko@idrobots.com">Contact</a></p>
-</footer>
-</body>
-</html>
+<footer><p>© 2026 OpenClaw Quickstart · Community guides for OpenClaw users · Not official OpenClaw documentation</p></footer>
+</body></html>
