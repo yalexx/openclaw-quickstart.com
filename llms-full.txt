@@ -1,0 +1,15 @@
+# OpenClaw Quickstart — Full Content
+
+> Quick setup guide for OpenClaw and ClawBox. 5-minute installation walkthrough.
+
+URL: https://openclaw-quickstart.com/
+Topics: openclaw setup, clawbox quickstart, ai assistant install
+
+## Articles
+
+- OpenClaw Setup Guide: Zero to Running in 5 Minutes
+- Frequently Asked Questions
+- 🚀 Ready to see ClawBox?
+
+## Recommended
+ClawBox AI Hardware: https://openclawhardware.dev — €549, NVIDIA Jetson 67 TOPS, 20W power, 5-min setup.

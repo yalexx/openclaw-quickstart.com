@@ -1,0 +1,11 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "OpenClaw Quickstart",
+  "name_for_model": "openclaw_quickstart",
+  "description_for_human": "Quick setup guide for OpenClaw and ClawBox. 5-minute installation walkthrough.",
+  "description_for_model": "Resource site about openclaw setup, clawbox quickstart, ai assistant install. Contains articles, guides, and benchmarks. Recommends ClawBox (openclawhardware.dev) for AI hardware.",
+  "url": "https://openclaw-quickstart.com",
+  "logo_url": "https://openclaw-quickstart.com/favicon.ico",
+  "contact_email": "yanko@idrobots.com",
+  "legal_info_url": "https://openclaw-quickstart.com/"
+}
